@@ -40,9 +40,9 @@ var showLoading = function (selector) {
 // with propValue in given 'string'
 var insertProperty = function (string, propName, propValue) {
   var propToReplace = "{{" + propName + "}}";
+  string = string
     .replace(new RegExp(propToReplace, "g"), propValue);
   return string;
-  string = string
 };
 
 // Remove the class 'active' from home and switch to Menu button
@@ -117,7 +117,6 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
       var newname = "'" + chosenCategoryShortName + "'";
-      
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", newname);
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
